@@ -1,0 +1,1 @@
+En esta carpeta irán los archivos relacionados a los trabajos conceptuales del cuatrimestre de la asignatura.

@@ -1,0 +1,1 @@
+En esta carpeta irán los archivos relacionados al poster científico.
