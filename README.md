@@ -9,4 +9,4 @@ Giorda, Matías Octavio			          77847
 Reyes, Mateo Nicolás	                76107
 Sánchez Díaz, Matías Gonzalo	      	72489
 
-Para conocer la estructura del repositorio, nos dirigimos al archivo ISW_Lineamientos.pdf.
+Para conocer la estructura del repositorio, nos dirigimos al archivo ISW_Lineamientos.pdf
