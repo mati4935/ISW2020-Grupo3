@@ -1,7 +1,99 @@
-<p>cobro works!</p>
+<div class="container bg-light">
+  <br>
+  <h4 class="container-fluid">Cobro: </h4>
+  <div id="divFormulario2" class="container-fluid">
+    <br>
+    <form name="formSegundo">
+    <div class="form-group row">
+      <label class="col-form-label col-sm-5 col-sm-offset-1">
+        Seleccione la forma de pago </label>
+      <label class="col-form-label col-sm-2 offset-2">
+        Total: </label>
+        <input type="text" name="Nombre" class="form-control col-sm-3" formControlName="precio" maxlength="55" />
+      
+    </div>
+
+    <div class="form-check-inline">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="optradio" (click)="ActivarEfectivo()">Efectivo
+        </label>
+      </div>
+      <div class="form-check-inline offset-4">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="optradio" (click)="ActivarVISA()">VISA tarjeta de crédito
+        </label>
+      </div>
+
+<br>
+<br>
+
+    <div *ngIf="desplegarVISA == 'SI'">
+        <div class="form-group row">
+            <label class="col-form-label col-sm-2 col-sm-offset-1">
+            Nombre titular: </label>
+            <div class="col-sm-3">
+                <input type="text" name="Nombre" class="form-control" formControlName="refNomTitular" maxlength="55" />
+            </div>
+            <label class="col-form-label col-sm-2 col-sm-offset-1">
+            Apellido titular: </label>
+            <div class="col-sm-3">
+            <input type="text" name="Nombre" class="form-control" formControlName="refApeTitular" maxlength="55" />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-form-label col-sm-2 col-sm-offset-1">
+                Número de tarjeta: </label>
+            <div class="col-sm-3">
+                <input type="text" name="Nombre" class="form-control" formControlName="refNumTarjeta" maxlength="55" />
+            </div>
+            <label class="col-form-label col-sm-2 col-sm-offset-1">
+                CVC: </label>
+            <div class="col-sm-3">
+                <input type="text" name="Nombre" class="form-control" formControlName="refCVC" maxlength="55" />
+            </div>
+        </div>
+    </div>
+
+<div *ngIf="desplegarEfectivo == 'SI'">
+    <div class="form-group row">
+        <label class="col-form-label col-sm-2 col-sm-offset-1">
+        Monto: </label>
+        <div class="col-sm-3">
+            <input type="text" name="Nombre" class="form-control" formControlName="refMonto" maxlength="55" />
+        </div>
+    </div>
+</div>
+
+<br>
+
+<label class="col-form-label col-sm-4 offset-2">
+    ¿Cuándo desea recibirlo? </label>
+
+<div class="form-check offset-4">
+    <label class="form-check-label">
+      <input type="radio" class="form-check-input" name="optradio">Lo antes posible
+    </label>
+  </div>
+  <div class="form-check offset-4">
+    <label class="form-check-label">
+      <input type="radio" class="form-check-input" name="optradio">Fecha y hora determinada
+    </label>
+  </div>
+
+<br>
+
 <div >
     <button type="button" routerLink="/pedido" class="btn btn-dark">
       <span class="fas fa-arrow-left"> </span>
       Volver
     </button>
+    
+    <button type="button" class="btn btn-dark offset-9">
+      <span class="fas fa-arrow-right"> </span>
+      Confirmar
+    </button>
   </div>
+</form>
+</div>
+</div>
