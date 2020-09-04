@@ -4,10 +4,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PedidoComponent } from './pedido/pedido.component';
-import { MenuComponent } from './menu/menu.component';
+import { PedidoComponent } from './components/pedido/pedido.component';
+import { MenuComponent } from './components/menu/menu.component';
 import { APP_BASE_HREF} from '@angular/common';
-import { CobroComponent } from './cobro/cobro.component';  
+import { CobroComponent } from './components/cobro/cobro.component';  
 
 @NgModule({
   declarations: [

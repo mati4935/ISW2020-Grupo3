@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ciudades, Ciudad } from '../../models/ciudades';
+import { MockCiudadesService } from '../../services/mock-ciudades.service'
 
 @Component({
   selector: 'app-pedido',
@@ -7,15 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PedidoComponent implements OnInit {
 
-  desplegarProducto = "SI";
-  desplegarComercio = "SI";
-  desplegarEntrega = "SI";
+  Items: Ciudad[] = [];
 
-  constructor() { }
+  desplegarProducto = "NO";
+  desplegarComercio = "NO";
+  desplegarEntrega = "NO";
+
+  constructor(
+    private servicioCiudades: MockCiudadesService
+  ) { }
 
   ngOnInit(): void {
+    this.GetCiudades();
   }
   
+  GetCiudades() {
+    this.servicioCiudades.get().subscribe(
+      {
+          next: ciudades => this.Items = ciudades,
+          //error: err => window.alert(err.statusText)
+      }
+    );
+  }
+
   ActivarProducto()
   {
     this.desplegarProducto="SI";

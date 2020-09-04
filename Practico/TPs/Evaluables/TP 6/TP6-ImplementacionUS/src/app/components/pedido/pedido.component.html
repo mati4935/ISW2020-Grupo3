@@ -52,10 +52,9 @@
         <div class="form-group row">
           <label class="col-form-label col-sm-2 col-sm-offset-1">
             Ciudad: </label>
-          <div class="col-sm-3">
+          <div class="col-sm-3">      
             <select class="form-control" name="Activo" formControlName="Activo">
-              <option selected>Seleccione...</option>
-              <option>...</option>
+              <option *ngFor="let items of Items" value="items.nombre">{{items.nombre}}          
             </select>
           </div>
           <label class="col-form-label col-sm-2 col-sm-offset-1">
@@ -103,8 +102,7 @@
             Ciudad: </label>
           <div class="col-sm-3">
             <select class="form-control" name="Activo" formControlName="Activo">
-              <option selected>Seleccione...</option>
-              <option>...</option>
+              <option *ngFor="let items of Items" value="items.nombre">{{items.nombre}}          
             </select>
           </div>
           <label class="col-form-label col-sm-2 col-sm-offset-1">
