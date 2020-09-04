@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PedidoComponent implements OnInit {
 
-  desplegarProducto = "NO";
-  desplegarComercio = "NO";
-  desplegarEntrega = "NO";
+  desplegarProducto = "SI";
+  desplegarComercio = "SI";
+  desplegarEntrega = "SI";
 
   constructor() { }
 

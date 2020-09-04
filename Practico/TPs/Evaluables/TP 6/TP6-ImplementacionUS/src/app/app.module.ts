@@ -6,13 +6,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PedidoComponent } from './pedido/pedido.component';
 import { MenuComponent } from './menu/menu.component';
-import { APP_BASE_HREF} from '@angular/common';  
+import { APP_BASE_HREF} from '@angular/common';
+import { CobroComponent } from './cobro/cobro.component';  
 
 @NgModule({
   declarations: [
     AppComponent,
     PedidoComponent,
-    MenuComponent
+    MenuComponent,
+    CobroComponent
   ],
   imports: [
     BrowserModule,
@@ -20,6 +22,7 @@ import { APP_BASE_HREF} from '@angular/common';
     RouterModule.forRoot([
       { path: '', redirectTo: '/pedido', pathMatch: 'full' },
       { path: 'pedido', component: PedidoComponent },
+      { path: 'cobro', component: CobroComponent }
     ])
   ],
   providers: [],

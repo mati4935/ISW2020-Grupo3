@@ -2,9 +2,9 @@
   <br>
   <h4 class="container-fluid">Tu pedido: </h4>
   <div id="divFormulario1" class="container-fluid">
-      <br>
-      <form name="formPrimero">
-        <h5>Producto
+    <br>
+    <form name="formPrimero">
+      <h5>Producto
         <button type="button" name="btnAdjuntar" class="btn brn-primary" (click)="ActivarProducto()">
           <span class="fa fa-arrow-alt-circle-right" aria-hidden="true" *ngIf="desplegarProducto == 'NO'"></span>
         </button>
@@ -12,52 +12,121 @@
           <span class="fa fa-arrow-alt-circle-left" aria-hidden="true" *ngIf="desplegarProducto == 'SI'"></span>
         </button>
       </h5>
-        <div id="campoProductos" class="container-fluid" *ngIf="desplegarProducto == 'SI'">
-          <label class="label label-primary col-lg-2">Productos:</label>
-          <input type="text" class="col-lg-9" formControlName="productos">
-          <button type="button" name="btnAdjuntar" class="btn brn-primary" >
-            <span class="fa fa-camera" aria-hidden="true"></span>
+      <div id="campoProductos" class="container-fluid" *ngIf="desplegarProducto == 'SI'">
+        <div class="form-group row">
+          <label class="col-form-label col-sm-2 col-sm-offset-1">
+            Productos: </label>
+          <div class="col-sm-3">
+            <input type="text" name="Nombre" class="form-control" formControlName="productos" maxlength="55" />
+          </div>
+          <button title="Adjuntar imagen" type="button" class="btn btn-primary">
+            <span class="fa fa-camera"> </span></button>
+        </div>
+      </div>
+
+      <br>
+
+      <h5>Direccion Comercio
+        <button type="button" name="btnAdjuntar" class="btn brn-primary" (click)="ActivarComercio()">
+          <span class="fa fa-arrow-alt-circle-right" aria-hidden="true" *ngIf="desplegarComercio == 'NO'"></span>
+        </button>
+        <button type="button" name="btnAdjuntar" class="btn brn-primary" (click)="DesactivarComercio()">
+          <span class="fa fa-arrow-alt-circle-left" aria-hidden="true" *ngIf="desplegarComercio == 'SI'"></span>
+        </button>
+      </h5>
+      <div id="campoComercio" class="container-fluid" *ngIf="desplegarComercio == 'SI'">
+
+        <div class="form-group row">
+          <label class="col-form-label col-sm-2 col-sm-offset-1">
+            Calle: </label>
+          <div class="col-sm-3">
+            <input type="text" name="Nombre" class="form-control" formControlName="calleComercio" maxlength="55" />
+          </div>
+          <label class="col-form-label col-sm-2 col-sm-offset-1">
+            Numero: </label>
+          <div class="col-sm-3">
+            <input type="text" name="Nombre" class="form-control" formControlName="numeroComercio" maxlength="55" />
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-form-label col-sm-2 col-sm-offset-1">
+            Ciudad: </label>
+          <div class="col-sm-3">
+            <select class="form-control" name="Activo" formControlName="Activo">
+              <option selected>Seleccione...</option>
+              <option>...</option>
+            </select>
+          </div>
+          <label class="col-form-label col-sm-2 col-sm-offset-1">
+            Referencia: </label>
+          <div class="col-sm-3">
+            <input type="text" name="Nombre" class="form-control" formControlName="refComercio" maxlength="55" />
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <button type="button" class="btn btn-primary col-sm-2 offset-9">
+            <span class="fas fa-map-marked-alt"> </span>
+            Busque por mapa
           </button>
         </div>
-        <br>
-        <h5>Direccion Comercio
-          <button type="button" name="btnAdjuntar" class="btn brn-primary" (click)="ActivarComercio()">
-            <span class="fa fa-arrow-alt-circle-right" aria-hidden="true" *ngIf="desplegarComercio == 'NO'"></span>
-          </button>
-          <button type="button" name="btnAdjuntar" class="btn brn-primary" (click)="DesactivarComercio()">
-            <span class="fa fa-arrow-alt-circle-left" aria-hidden="true" *ngIf="desplegarComercio == 'SI'"></span>
-          </button>
-        </h5>
-        <div id="campoComercio" class="container-fluid" *ngIf="desplegarComercio == 'SI'">
-          <label class="label label-primary col-lg-2">Calle: </label>
-          <input type="text" class="col-lg-9" formControlName="calleComercio">
-          <label class="label label-primary col-lg-2">Numero: </label>
-          <input type="text" class="col-lg-9" formControlName="numeroComercio">
-          <label class="label label-primary col-lg-2">Ciudad: </label>
-          <input type="text" class="col-lg-9" formControlName="ciudadComercio">
-          <label class="label label-primary col-lg-2">Referencia: </label>
-          <input type="text" class="col-lg-9" formControlName="refComercio">
+
+      </div>
+
+      <br>
+
+      <h5>Direccion Entrega
+        <button type="button" name="btnAdjuntar" class="btn brn-primary" (click)="ActivarEntrega()">
+          <span class="fa fa-arrow-alt-circle-right" aria-hidden="true" *ngIf="desplegarEntrega == 'NO'"></span>
+        </button>
+        <button type="button" name="btnAdjuntar" class="btn brn-primary" (click)="DesactivarEntrega()">
+          <span class="fa fa-arrow-alt-circle-left" aria-hidden="true" *ngIf="desplegarEntrega == 'SI'"></span>
+        </button>
+      </h5>
+      <div id="campoEntrega" class="container-fluid" *ngIf="desplegarEntrega == 'SI'">
+        <div class="form-group row">
+          <label class="col-form-label col-sm-2 col-sm-offset-1">
+            Calle: </label>
+          <div class="col-sm-3">
+            <input type="text" name="Nombre" class="form-control" formControlName="calleEntrega" maxlength="55" />
+          </div>
+          <label class="col-form-label col-sm-2 col-sm-offset-1">
+            Numero: </label>
+          <div class="col-sm-3">
+            <input type="text" name="Nombre" class="form-control" formControlName="numeroEntrega" maxlength="55" />
+          </div>
         </div>
-        <br>
-        <h5>Direccion Entrega
-          <button type="button" name="btnAdjuntar" class="btn brn-primary" (click)="ActivarEntrega()">
-            <span class="fa fa-arrow-alt-circle-right" aria-hidden="true" *ngIf="desplegarEntrega == 'NO'"></span>
-          </button>
-          <button type="button" name="btnAdjuntar" class="btn brn-primary" (click)="DesactivarEntrega()">
-            <span class="fa fa-arrow-alt-circle-left" aria-hidden="true" *ngIf="desplegarEntrega == 'SI'"></span>
-          </button>
-        </h5>
-        <div id="campoEntrega" class="container-fluid" *ngIf="desplegarEntrega == 'SI'">
-          <label class="label label-primary col-lg-2">Calle: </label>
-          <input type="text" class="col-lg-9" formControlName="calleEntrega">
-          <label class="label label-primary col-lg-2">Numero: </label>
-          <input type="text" class="col-lg-9" formControlName="numeroEntrega">
-          <label class="label label-primary col-lg-2">Ciudad: </label>
-          <input type="text" class="col-lg-9" formControlName="ciudadEntrega">
-          <label class="label label-primary col-lg-2">Referencia: </label>
-          <input type="text" class="col-lg-9" formControlName="refEntrega">
+
+        <div class="form-group row">
+          <label class="col-form-label col-sm-2 col-sm-offset-1">
+            Ciudad: </label>
+          <div class="col-sm-3">
+            <select class="form-control" name="Activo" formControlName="Activo">
+              <option selected>Seleccione...</option>
+              <option>...</option>
+            </select>
+          </div>
+          <label class="col-form-label col-sm-2 col-sm-offset-1">
+            Referencia: </label>
+          <div class="col-sm-3">
+            <input type="text" name="Nombre" class="form-control" formControlName="refEntrega" maxlength="55" />
+          </div>
         </div>
-          
-      </form>
+
+      </div>
+
+      <br>
+
+      <div class="row justify-content-end">
+        <button type="button" routerLink="/cobro" class="btn btn-dark">
+          <span class="fas fa-arrow-right"> </span>
+          Continuar
+        </button>
+      </div>
+
+      <br>
+
+    </form>
   </div>
 </div>
