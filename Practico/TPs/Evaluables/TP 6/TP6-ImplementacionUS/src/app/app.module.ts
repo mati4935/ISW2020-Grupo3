@@ -8,6 +8,8 @@ import { PedidoComponent } from './components/pedido/pedido.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { APP_BASE_HREF} from '@angular/common';
 import { CobroComponent } from './components/cobro/cobro.component';  
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { CobroComponent } from './components/cobro/cobro.component';
       { path: '', redirectTo: '/pedido', pathMatch: 'full' },
       { path: 'pedido', component: PedidoComponent },
       { path: 'cobro', component: CobroComponent }
-    ])
+    ]),
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

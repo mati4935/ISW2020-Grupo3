@@ -3,7 +3,7 @@
   <h4 class="container-fluid">Tu pedido: </h4>
   <div id="divFormulario1" class="container-fluid">
     <br>
-    <form name="formPrimero">
+    <form name="formPrimero" [formGroup]="formPrimero">
       <h5>Producto
         <button type="button" name="btnAdjuntar" class="btn brn-primary" (click)="ActivarProducto()">
           <span class="fa fa-arrow-alt-circle-right" aria-hidden="true" *ngIf="desplegarProducto == 'NO'"></span>
@@ -14,10 +14,11 @@
       </h5>
       <div id="campoProductos" class="container-fluid" *ngIf="desplegarProducto == 'SI'">
         <div class="form-group row">
+          <span class="text-danger fas fa-exclamation-circle" *ngIf="((formPrimero.controls.productos.touched || enviado ) && (formPrimero.controls.productos.errors?.minlength|| formPrimero.controls.productos.errors?.maxlength)) || (enviado && formPrimero.invalid)" ></span>
           <label class="col-form-label col-sm-2 col-sm-offset-1">
             Productos: </label>
           <div class="col-sm-3">
-            <input type="text" name="Nombre" class="form-control" formControlName="productos" maxlength="55" />
+            <input type="text" name="Nombre" class="form-control" formControlName="productos" [ngClass]="{'is-invalid': (formPrimero.controls.productos.touched || enviado) && formPrimero.controls.productos.errors}" />
           </div>
           <button title="Adjuntar imagen" type="button" class="btn btn-primary">
             <span class="fa fa-camera"> </span></button>
@@ -37,23 +38,26 @@
       <div id="campoComercio" class="container-fluid" *ngIf="desplegarComercio == 'SI'">
 
         <div class="form-group row">
+          <span class="text-danger fas fa-exclamation-circle" *ngIf="((formPrimero.controls.calleComercio.touched || enviado ) && (formPrimero.controls.calleComercio.errors?.minlength|| formPrimero.controls.calleComercio.errors?.maxlength)) || (enviado && formPrimero.invalid)" ></span>
           <label class="col-form-label col-sm-2 col-sm-offset-1">
             Calle: </label>
           <div class="col-sm-3">
-            <input type="text" name="Nombre" class="form-control" formControlName="calleComercio" maxlength="55" />
+            <input type="text" name="Nombre" class="form-control" formControlName="calleComercio" [ngClass]="{'is-invalid': (formPrimero.controls.calleComercio.touched || enviado) && formPrimero.controls.calleComercio.errors}" />
           </div>
+          <span class="text-danger fas fa-exclamation-circle" *ngIf="((formPrimero.controls.numeroComercio.touched || enviado ) && formPrimero.controls.numeroComercio.errors?.pattern) || (enviado && formPrimero.invalid) "></span>
           <label class="col-form-label col-sm-2 col-sm-offset-1">
             Numero: </label>
           <div class="col-sm-3">
-            <input type="text" name="Nombre" class="form-control" formControlName="numeroComercio" maxlength="55" />
+            <input type="text" name="Nombre" class="form-control" formControlName="numeroComercio" [ngClass]="{'is-invalid': (formPrimero.controls.numeroComercio.touched || enviado) && formPrimero.controls.numeroComercio.errors}" />
           </div>
         </div>
 
         <div class="form-group row">
+          <span class="text-danger fas fa-exclamation-circle" *ngIf="((formPrimero.controls.ciudadComercio.touched || enviado ) && (formPrimero.controls.ciudadComercio.errors?.minlength|| formPrimero.controls.ciudadComercio.errors?.maxlength)) || (enviado && formPrimero.invalid)" ></span>
           <label class="col-form-label col-sm-2 col-sm-offset-1">
             Ciudad: </label>
           <div class="col-sm-3">      
-            <select class="form-control" name="Activo" formControlName="Activo">
+            <select class="form-control" name="Activo" formControlName="ciudadComercio" [ngClass]="{'is-invalid': (formPrimero.controls.ciudadComercio.touched || enviado) && formPrimero.controls.ciudadComercio.errors}">
               <option *ngFor="let items of Items" value="items.nombre">{{items.nombre}}          
             </select>
           </div>
@@ -85,23 +89,26 @@
       </h5>
       <div id="campoEntrega" class="container-fluid" *ngIf="desplegarEntrega == 'SI'">
         <div class="form-group row">
+          <span class="text-danger fas fa-exclamation-circle" *ngIf="((formPrimero.controls.calleEntrega.touched || enviado ) && (formPrimero.controls.calleEntrega.errors?.minlength|| formPrimero.controls.calleEntrega.errors?.maxlength)) || (enviado && formPrimero.invalid)" ></span>
           <label class="col-form-label col-sm-2 col-sm-offset-1">
             Calle: </label>
           <div class="col-sm-3">
-            <input type="text" name="Nombre" class="form-control" formControlName="calleEntrega" maxlength="55" />
+            <input type="text" name="Nombre" class="form-control" formControlName="calleEntrega" [ngClass]="{'is-invalid': (formPrimero.controls.calleEntrega.touched || enviado) && formPrimero.controls.calleEntrega.errors}" />
           </div>
+          <span class="text-danger fas fa-exclamation-circle" *ngIf="((formPrimero.controls.numeroEntrega.touched || enviado ) && formPrimero.controls.numeroEntrega.errors?.pattern) || (enviado && formPrimero.invalid) "></span>
           <label class="col-form-label col-sm-2 col-sm-offset-1">
             Numero: </label>
           <div class="col-sm-3">
-            <input type="text" name="Nombre" class="form-control" formControlName="numeroEntrega" maxlength="55" />
+            <input type="text" name="Nombre" class="form-control" formControlName="numeroEntrega" [ngClass]="{'is-invalid': (formPrimero.controls.numeroEntrega.touched || enviado) && formPrimero.controls.numeroEntrega.errors}" />
           </div>
         </div>
 
         <div class="form-group row">
+          <span class="text-danger fas fa-exclamation-circle" *ngIf="((formPrimero.controls.ciudadEntrega.touched || enviado ) && (formPrimero.controls.ciudadEntrega.errors?.minlength|| formPrimero.controls.ciudadEntrega.errors?.maxlength)) || (enviado && formPrimero.invalid)" ></span>
           <label class="col-form-label col-sm-2 col-sm-offset-1">
             Ciudad: </label>
           <div class="col-sm-3">
-            <select class="form-control" name="Activo" formControlName="Activo">
+            <select class="form-control" name="Activo" formControlName="ciudadEntrega" [ngClass]="{'is-invalid': (formPrimero.controls.ciudadEntrega.touched || enviado) && formPrimero.controls.ciudadEntrega.errors}">
               <option *ngFor="let items of Items" value="items.nombre">{{items.nombre}}          
             </select>
           </div>
@@ -117,9 +124,13 @@
       <br>
 
       <div class="row justify-content-end">
-        <button type="button" routerLink="/cobro" class="btn btn-dark">
+        <button type="button" routerLink="/cobro" class="btn btn-dark" *ngIf="estado=='Confirmado'">
           <span class="fas fa-arrow-right"> </span>
           Continuar
+        </button>
+        <button type="button" class="btn btn-dark" (click)="Confirmar()" *ngIf="estado=='No confirmado'">
+          <span class="fas fa-check"> </span>
+          Confirmar
         </button>
       </div>
 

@@ -72,12 +72,17 @@
 
 <div class="form-check offset-4">
     <label class="form-check-label">
-      <input type="radio" class="form-check-input" name="optradio">Lo antes posible
+      <input type="radio" class="form-check-input" name="optradio" (click)="DesactivarFechaHs()">Lo antes posible
     </label>
   </div>
   <div class="form-check offset-4">
     <label class="form-check-label">
-      <input type="radio" class="form-check-input" name="optradio">Fecha y hora determinada
+      <input type="radio" class="form-check-input" name="optradio" (click)="ActivarFechaHs()">Fecha y hora determinada
+      <div class="input-group" *ngIf="desplegarFechaHs == 'SI'">
+        <input type="text" name="Fecha" class="form-control col-lg-4" placeholder="dd/MM/AAAA" formControlName="fechaDeseada"/>
+        <label>&nbsp;</label>
+        <input type="text" name="Fecha" class="form-control col-lg-2" placeholder="Hs" formControlName="fechaDeseada"/>
+      </div>
     </label>
   </div>
 

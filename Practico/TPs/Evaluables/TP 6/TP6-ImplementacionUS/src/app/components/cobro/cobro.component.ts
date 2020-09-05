@@ -9,6 +9,7 @@ export class CobroComponent implements OnInit {
 
   desplegarEfectivo = "NO";
   desplegarVISA = "NO";
+  desplegarFechaHs = "NO";
 
   constructor() { }
 
@@ -34,6 +35,16 @@ export class CobroComponent implements OnInit {
   DesactivarVISA()
   {
     this.desplegarVISA="NO";
+  }
+
+  ActivarFechaHs()
+  {
+    this.desplegarFechaHs="SI";
+  }
+
+  DesactivarFechaHs()
+  {
+    this.desplegarFechaHs="NO";
   }
 
 }
