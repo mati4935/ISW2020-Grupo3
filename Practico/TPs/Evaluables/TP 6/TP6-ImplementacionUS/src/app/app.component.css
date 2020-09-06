@@ -1,4 +1,15 @@
 #divBody {
-    min-height: 75rem;
-    padding-top: 4.5rem;
+  min-height: 75rem;
+  padding-top: 4.5rem;
+}
+.miestilo1 {
+  background-color: #565f81;
+}
+.miestilo2 {
+  background-color: #a42b36;
+  color: #ffe5e5;
+}
+body {
+  width: 100%;
+  background-color: #ffe5e5;
 }

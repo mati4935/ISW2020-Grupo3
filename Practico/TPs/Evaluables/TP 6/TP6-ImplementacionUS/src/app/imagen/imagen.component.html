@@ -1,6 +1,16 @@
 <div>
-    <input type="file" #file placeholder="Seleccione una imagen"
-        style="display: none">
-    <button title="Subir imagen" type="button" class="btn btn-primary" (click)="file.click()">
-        <span class="fa fa-camera"> </span></button>
+  <input
+    type="file"
+    #file
+    placeholder="Seleccione una imagen"
+    style="display: none"
+  />
+  <button
+    title="Subir imagen"
+    type="button"
+    class="btn boton"
+    (click)="file.click()"
+  >
+    <span class="fa fa-camera"> </span>
+  </button>
 </div>

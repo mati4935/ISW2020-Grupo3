@@ -1,140 +1,362 @@
-<div class="bg-light">
-  <br>
-  <h4 class="container-fluid">Tu pedido: </h4>
+<div class="container">
+  <br />
+  <h4 class="container-fluid">Tu pedido:</h4>
   <div id="divFormulario1" class="container-fluid">
-    <br>
+    <br />
     <form name="formPrimero" [formGroup]="formPrimero">
-      <h5>Producto
-        <button type="button" name="btnAdjuntar" class="btn brn-primary" (click)="ActivarProducto()">
-          <span class="fa fa-arrow-alt-circle-right" aria-hidden="true" *ngIf="desplegarProducto == 'NO'"></span>
+      <h5>
+        Producto
+        <button
+          type="button"
+          name="btnAdjuntar"
+          class="btn brn-primary"
+          (click)="ActivarProducto()"
+        >
+          <span
+            class="fa fa-arrow-alt-circle-right"
+            aria-hidden="true"
+            *ngIf="desplegarProducto == 'NO'"
+          ></span>
         </button>
-        <button type="button" name="btnAdjuntar" class="btn brn-primary" (click)="DesactivarProducto()">
-          <span class="fa fa-arrow-alt-circle-left" aria-hidden="true" *ngIf="desplegarProducto == 'SI'"></span>
+        <button
+          type="button"
+          name="btnAdjuntar"
+          class="btn brn-primary"
+          (click)="DesactivarProducto()"
+        >
+          <span
+            class="fa fa-arrow-alt-circle-left"
+            aria-hidden="true"
+            *ngIf="desplegarProducto == 'SI'"
+          ></span>
         </button>
       </h5>
-      <div id="campoProductos" class="container-fluid" *ngIf="desplegarProducto == 'SI'">
+      <div
+        id="campoProductos"
+        class="container-fluid"
+        *ngIf="desplegarProducto == 'SI'"
+      >
         <div class="form-group row">
-          <span class="text-danger fas fa-exclamation-circle" *ngIf="((formPrimero.controls.productos.touched || enviado ) && (formPrimero.controls.productos.errors?.minlength|| formPrimero.controls.productos.errors?.maxlength)) || (enviado && formPrimero.invalid)" ></span>
+          <span
+            class="text-danger fas fa-exclamation-circle"
+            *ngIf="
+              ((formPrimero.controls.productos.touched || enviado) &&
+                (formPrimero.controls.productos.errors?.minlength ||
+                  formPrimero.controls.productos.errors?.maxlength)) ||
+              (enviado && formPrimero.invalid)
+            "
+          ></span>
           <label class="col-form-label col-sm-2 col-sm-offset-1">
-            Productos: </label>
+            Productos:
+          </label>
           <div class="col-sm-3">
-            <input type="text" name="Nombre" class="form-control" formControlName="productos" [ngClass]="{'is-invalid': (formPrimero.controls.productos.touched || enviado) && formPrimero.controls.productos.errors}" />
+            <input
+              type="text"
+              name="Nombre"
+              class="form-control"
+              formControlName="productos"
+              [ngClass]="{
+                'is-invalid':
+                  (formPrimero.controls.productos.touched || enviado) &&
+                  formPrimero.controls.productos.errors
+              }"
+            />
           </div>
           <app-imagen></app-imagen>
         </div>
       </div>
 
-      <br>
+      <br />
 
-      <h5>Direccion Comercio
-        <button type="button" name="btnAdjuntar" class="btn brn-primary" (click)="ActivarComercio()">
-          <span class="fa fa-arrow-alt-circle-right" aria-hidden="true" *ngIf="desplegarComercio == 'NO'"></span>
+      <h5>
+        Direccion Comercio
+        <button
+          type="button"
+          name="btnAdjuntar"
+          class="btn brn-primary"
+          (click)="ActivarComercio()"
+        >
+          <span
+            class="fa fa-arrow-alt-circle-right"
+            aria-hidden="true"
+            *ngIf="desplegarComercio == 'NO'"
+          ></span>
         </button>
-        <button type="button" name="btnAdjuntar" class="btn brn-primary" (click)="DesactivarComercio()">
-          <span class="fa fa-arrow-alt-circle-left" aria-hidden="true" *ngIf="desplegarComercio == 'SI'"></span>
+        <button
+          type="button"
+          name="btnAdjuntar"
+          class="btn brn-primary"
+          (click)="DesactivarComercio()"
+        >
+          <span
+            class="fa fa-arrow-alt-circle-left"
+            aria-hidden="true"
+            *ngIf="desplegarComercio == 'SI'"
+          ></span>
         </button>
       </h5>
-      <div id="campoComercio" class="container-fluid" *ngIf="desplegarComercio == 'SI'">
-
+      <div
+        id="campoComercio"
+        class="container-fluid"
+        *ngIf="desplegarComercio == 'SI'"
+      >
         <div class="form-group row">
-          <span class="text-danger fas fa-exclamation-circle" *ngIf="((formPrimero.controls.calleComercio.touched || enviado ) && (formPrimero.controls.calleComercio.errors?.minlength|| formPrimero.controls.calleComercio.errors?.maxlength)) || (enviado && formPrimero.invalid)" ></span>
+          <span
+            class="text-danger fas fa-exclamation-circle"
+            *ngIf="
+              ((formPrimero.controls.calleComercio.touched || enviado) &&
+                (formPrimero.controls.calleComercio.errors?.minlength ||
+                  formPrimero.controls.calleComercio.errors?.maxlength)) ||
+              (enviado && formPrimero.invalid)
+            "
+          ></span>
           <label class="col-form-label col-sm-2 col-sm-offset-1">
-            Calle: </label>
+            Calle:
+          </label>
           <div class="col-sm-3">
-            <input type="text" name="Nombre" class="form-control" formControlName="calleComercio" [ngClass]="{'is-invalid': (formPrimero.controls.calleComercio.touched || enviado) && formPrimero.controls.calleComercio.errors}" />
+            <input
+              type="text"
+              name="Nombre"
+              class="form-control"
+              formControlName="calleComercio"
+              [ngClass]="{
+                'is-invalid':
+                  (formPrimero.controls.calleComercio.touched || enviado) &&
+                  formPrimero.controls.calleComercio.errors
+              }"
+            />
           </div>
-          <span class="text-danger fas fa-exclamation-circle" *ngIf="((formPrimero.controls.numeroComercio.touched || enviado ) && formPrimero.controls.numeroComercio.errors?.pattern) || (enviado && formPrimero.invalid) "></span>
+          <span
+            class="text-danger fas fa-exclamation-circle"
+            *ngIf="
+              ((formPrimero.controls.numeroComercio.touched || enviado) &&
+                formPrimero.controls.numeroComercio.errors?.pattern) ||
+              (enviado && formPrimero.invalid)
+            "
+          ></span>
           <label class="col-form-label col-sm-2 col-sm-offset-1">
-            Numero: </label>
+            Numero:
+          </label>
           <div class="col-sm-3">
-            <input type="text" name="Nombre" class="form-control" formControlName="numeroComercio" [ngClass]="{'is-invalid': (formPrimero.controls.numeroComercio.touched || enviado) && formPrimero.controls.numeroComercio.errors}" />
+            <input
+              type="number"
+              name="Nombre"
+              class="form-control"
+              formControlName="numeroComercio"
+              [ngClass]="{
+                'is-invalid':
+                  (formPrimero.controls.numeroComercio.touched || enviado) &&
+                  formPrimero.controls.numeroComercio.errors
+              }"
+            />
           </div>
         </div>
 
         <div class="form-group row">
-          <span class="text-danger fas fa-exclamation-circle" *ngIf="((formPrimero.controls.ciudadComercio.touched || enviado ) && (formPrimero.controls.ciudadComercio.errors?.minlength|| formPrimero.controls.ciudadComercio.errors?.maxlength)) || (enviado && formPrimero.invalid)" ></span>
+          <span
+            class="text-danger fas fa-exclamation-circle"
+            *ngIf="
+              ((formPrimero.controls.ciudadComercio.touched || enviado) &&
+                (formPrimero.controls.ciudadComercio.errors?.minlength ||
+                  formPrimero.controls.ciudadComercio.errors?.maxlength)) ||
+              (enviado && formPrimero.invalid)
+            "
+          ></span>
           <label class="col-form-label col-sm-2 col-sm-offset-1">
-            Ciudad: </label>
-          <div class="col-sm-3">      
-            <select class="form-control" name="Activo" formControlName="ciudadComercio" [ngClass]="{'is-invalid': (formPrimero.controls.ciudadComercio.touched || enviado) && formPrimero.controls.ciudadComercio.errors}">
-              <option *ngFor="let items of Items" value="items.nombre">{{items.nombre}}          
+            Ciudad:
+          </label>
+          <div class="col-sm-3">
+            <select
+              class="form-control"
+              name="Activo"
+              formControlName="ciudadComercio"
+              [ngClass]="{
+                'is-invalid':
+                  (formPrimero.controls.ciudadComercio.touched || enviado) &&
+                  formPrimero.controls.ciudadComercio.errors
+              }"
+            >
+              <option *ngFor="let items of Items" value="items.nombre">
+                {{ items.nombre }}
+              </option>
             </select>
           </div>
           <label class="col-form-label col-sm-2 col-sm-offset-1">
-            Referencia: </label>
+            Referencia:
+          </label>
           <div class="col-sm-3">
-            <input type="text" name="Nombre" class="form-control" formControlName="refComercio" maxlength="55" />
+            <input
+              type="text"
+              name="Nombre"
+              class="form-control"
+              formControlName="refComercio"
+              maxlength="55"
+            />
           </div>
         </div>
 
         <div class="form-group row">
-          <button type="button" class="btn btn-primary col-sm-2 offset-9">
+          <button type="button" class="btn boton col-sm-2 offset-9">
             <span class="fas fa-map-marked-alt"> </span>
             Busque por mapa
           </button>
         </div>
-
       </div>
 
-      <br>
+      <br />
 
-      <h5>Direccion Entrega
-        <button type="button" name="btnAdjuntar" class="btn brn-primary" (click)="ActivarEntrega()">
-          <span class="fa fa-arrow-alt-circle-right" aria-hidden="true" *ngIf="desplegarEntrega == 'NO'"></span>
+      <h5>
+        Direccion Entrega
+        <button
+          type="button"
+          name="btnAdjuntar"
+          class="btn brn-primary"
+          (click)="ActivarEntrega()"
+        >
+          <span
+            class="fa fa-arrow-alt-circle-right"
+            aria-hidden="true"
+            *ngIf="desplegarEntrega == 'NO'"
+          ></span>
         </button>
-        <button type="button" name="btnAdjuntar" class="btn brn-primary" (click)="DesactivarEntrega()">
-          <span class="fa fa-arrow-alt-circle-left" aria-hidden="true" *ngIf="desplegarEntrega == 'SI'"></span>
+        <button
+          type="button"
+          name="btnAdjuntar"
+          class="btn brn-primary"
+          (click)="DesactivarEntrega()"
+        >
+          <span
+            class="fa fa-arrow-alt-circle-left"
+            aria-hidden="true"
+            *ngIf="desplegarEntrega == 'SI'"
+          ></span>
         </button>
       </h5>
-      <div id="campoEntrega" class="container-fluid" *ngIf="desplegarEntrega == 'SI'">
+      <div
+        id="campoEntrega"
+        class="container-fluid"
+        *ngIf="desplegarEntrega == 'SI'"
+      >
         <div class="form-group row">
-          <span class="text-danger fas fa-exclamation-circle" *ngIf="((formPrimero.controls.calleEntrega.touched || enviado ) && (formPrimero.controls.calleEntrega.errors?.minlength|| formPrimero.controls.calleEntrega.errors?.maxlength)) || (enviado && formPrimero.invalid)" ></span>
+          <span
+            class="text-danger fas fa-exclamation-circle"
+            *ngIf="
+              ((formPrimero.controls.calleEntrega.touched || enviado) &&
+                (formPrimero.controls.calleEntrega.errors?.minlength ||
+                  formPrimero.controls.calleEntrega.errors?.maxlength)) ||
+              (enviado && formPrimero.invalid)
+            "
+          ></span>
           <label class="col-form-label col-sm-2 col-sm-offset-1">
-            Calle: </label>
+            Calle:
+          </label>
           <div class="col-sm-3">
-            <input type="text" name="Nombre" class="form-control" formControlName="calleEntrega" [ngClass]="{'is-invalid': (formPrimero.controls.calleEntrega.touched || enviado) && formPrimero.controls.calleEntrega.errors}" />
+            <input
+              type="text"
+              name="Nombre"
+              class="form-control"
+              formControlName="calleEntrega"
+              [ngClass]="{
+                'is-invalid':
+                  (formPrimero.controls.calleEntrega.touched || enviado) &&
+                  formPrimero.controls.calleEntrega.errors
+              }"
+            />
           </div>
-          <span class="text-danger fas fa-exclamation-circle" *ngIf="((formPrimero.controls.numeroEntrega.touched || enviado ) && formPrimero.controls.numeroEntrega.errors?.pattern) || (enviado && formPrimero.invalid) "></span>
+          <span
+            class="text-danger fas fa-exclamation-circle"
+            *ngIf="
+              ((formPrimero.controls.numeroEntrega.touched || enviado) &&
+                formPrimero.controls.numeroEntrega.errors?.pattern) ||
+              (enviado && formPrimero.invalid)
+            "
+          ></span>
           <label class="col-form-label col-sm-2 col-sm-offset-1">
-            Numero: </label>
+            Numero:
+          </label>
           <div class="col-sm-3">
-            <input type="text" name="Nombre" class="form-control" formControlName="numeroEntrega" [ngClass]="{'is-invalid': (formPrimero.controls.numeroEntrega.touched || enviado) && formPrimero.controls.numeroEntrega.errors}" />
+            <input
+              type="number"
+              name="Nombre"
+              class="form-control"
+              formControlName="numeroEntrega"
+              [ngClass]="{
+                'is-invalid':
+                  (formPrimero.controls.numeroEntrega.touched || enviado) &&
+                  formPrimero.controls.numeroEntrega.errors
+              }"
+            />
           </div>
         </div>
 
         <div class="form-group row">
-          <span class="text-danger fas fa-exclamation-circle" *ngIf="((formPrimero.controls.ciudadEntrega.touched || enviado ) && (formPrimero.controls.ciudadEntrega.errors?.minlength|| formPrimero.controls.ciudadEntrega.errors?.maxlength)) || (enviado && formPrimero.invalid)" ></span>
+          <span
+            class="text-danger fas fa-exclamation-circle"
+            *ngIf="
+              ((formPrimero.controls.ciudadEntrega.touched || enviado) &&
+                (formPrimero.controls.ciudadEntrega.errors?.minlength ||
+                  formPrimero.controls.ciudadEntrega.errors?.maxlength)) ||
+              (enviado && formPrimero.invalid)
+            "
+          ></span>
           <label class="col-form-label col-sm-2 col-sm-offset-1">
-            Ciudad: </label>
+            Ciudad:
+          </label>
           <div class="col-sm-3">
-            <select class="form-control" name="Activo" formControlName="ciudadEntrega" [ngClass]="{'is-invalid': (formPrimero.controls.ciudadEntrega.touched || enviado) && formPrimero.controls.ciudadEntrega.errors}">
-              <option *ngFor="let items of Items" value="items.nombre">{{items.nombre}}          
+            <select
+              class="form-control"
+              name="Activo"
+              formControlName="ciudadEntrega"
+              [ngClass]="{
+                'is-invalid':
+                  (formPrimero.controls.ciudadEntrega.touched || enviado) &&
+                  formPrimero.controls.ciudadEntrega.errors
+              }"
+            >
+              <option *ngFor="let items of Items" value="items.nombre">
+                {{ items.nombre }}
+              </option>
             </select>
           </div>
           <label class="col-form-label col-sm-2 col-sm-offset-1">
-            Referencia: </label>
+            Referencia:
+          </label>
           <div class="col-sm-3">
-            <input type="text" name="Nombre" class="form-control" formControlName="refEntrega" maxlength="55" />
+            <input
+              type="text"
+              name="Nombre"
+              class="form-control"
+              formControlName="refEntrega"
+              maxlength="55"
+            />
           </div>
         </div>
-
       </div>
 
-      <br>
+      <br />
 
       <div class="row justify-content-end">
-        <button type="button" routerLink="/cobro" class="btn btn-dark" *ngIf="estado=='Confirmado'">
+        <button
+          type="button"
+          routerLink="/cobro"
+          class="btn btn-dark"
+          *ngIf="estado == 'Confirmado'"
+        >
           <span class="fas fa-arrow-right"> </span>
           Continuar
         </button>
-        <button type="button" class="btn btn-dark" (click)="Confirmar()" *ngIf="estado=='No confirmado'">
+        <button
+          type="button"
+          class="btn btn-dark"
+          (click)="Confirmar()"
+          *ngIf="estado == 'No confirmado'"
+        >
           <span class="fas fa-check"> </span>
           Confirmar
         </button>
       </div>
 
-      <br>
-
+      <br />
     </form>
   </div>
 </div>
