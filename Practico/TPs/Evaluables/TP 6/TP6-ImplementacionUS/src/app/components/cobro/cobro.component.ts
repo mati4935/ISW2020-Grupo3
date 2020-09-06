@@ -24,6 +24,21 @@ export class CobroComponent implements OnInit {
   ngOnInit(): void {
     this.formFormaPago = this.formBuilder.group({
       precio: [null, [Validators.required, Validators.pattern("[0-9]{1,10}")]]
+     });
+
+     this.formVISA = this.formBuilder.group({
+      nombreTitular: ["",[Validators.required, Validators.minLength(1), Validators.maxLength(55)]],
+      apellidoTitular: ["",[Validators.required, Validators.minLength(1), Validators.maxLength(55)]],
+      numeroTarjeta: [null, [Validators.required, Validators.pattern("[0-9]{16}")]],
+      codigoTarjeta: [null, [Validators.required, Validators.pattern("[0-9]{3}")]],
+     });
+     this.formEFECTIVO = this.formBuilder.group({
+      monto: [null, [Validators.required, Validators.pattern("[0-9]{1,10}")]]
+     });
+     
+     this.formRECEPCION = this.formBuilder.group({
+      fecha: ["",[Validators.required,Validators.pattern("(0[1-9]|[12][0-9]|3[01])[-/](0[1-9]|1[012])[-/](19|20)[0-9]{2}")]],
+      hora: [null, [Validators.required, Validators.pattern("([0-2]?[0-9]?)[-:]([0-5]?[0-9]?)")]],
      })
   }
 
@@ -33,9 +48,7 @@ export class CobroComponent implements OnInit {
     this.desplegarEfectivo="SI";
     this.desplegarVISA="NO";
     this.formaPago="E";
-    this.formEFECTIVO = this.formBuilder.group({
-      monto: [null, [Validators.required, Validators.pattern("[0-9]{1,10}")]]
-     })
+    
   }
   DesactivarEfectivo()
   {
@@ -47,13 +60,6 @@ export class CobroComponent implements OnInit {
     this.desplegarVISA="SI";
     this.desplegarEfectivo="NO";
     this.formaPago="V";
-    this.formVISA = this.formBuilder.group({
-      nombreTitular: ["",[Validators.required, Validators.minLength(1), Validators.maxLength(55)]],
-      apellidoTitular: ["",[Validators.required, Validators.minLength(1), Validators.maxLength(55)]],
-      numeroTarjeta: [null, [Validators.required, Validators.pattern("[0-9]{16}")]],
-      codigoTarjeta: [null, [Validators.required, Validators.pattern("[0-9]{3}")]],
-     })
-
   }
   DesactivarVISA()
   {
@@ -64,10 +70,7 @@ export class CobroComponent implements OnInit {
   {
     this.desplegarFechaHs="SI";
     this.recepcion="FyH";
-    this.formRECEPCION = this.formBuilder.group({
-      fecha: ["",[Validators.required,Validators.pattern("(0[1-9]|[12][0-9]|3[01])[-/](0[1-9]|1[012])[-/](19|20)[0-9]{2}")]],
-      hora: [null, [Validators.required, Validators.pattern("[0-2]{1}[0-4]{1}")]],
-     })
+    
   }
 
   DesactivarFechaHs()

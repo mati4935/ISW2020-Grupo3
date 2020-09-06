@@ -7,8 +7,7 @@
       <div class="form-group row">
         <label class="col-form-label col-sm-5 col-sm-offset-1">
           Seleccione la forma de pago </label>
-        <span class="text-danger fas fa-exclamation-circle" *ngIf="((formFormaPago.controls.precio.touched || enviado ) && formFormaPago.controls.precio.errors?.pattern) || (enviado && formFormaPago.invalid) "></span>
-        <label class="col-form-label col-sm-2 offset-2">
+        <label class="col-form-label col-sm-2 offset-2"><span class="text-danger fas fa-exclamation-circle" *ngIf="((formFormaPago.controls.precio.touched || enviado ) && formFormaPago.controls.precio.errors?.pattern) || (enviado && formFormaPago.invalid) "></span>
           Total: </label>
         <input type="text" name="Nombre" class="form-control col-sm-3" formControlName="precio" [ngClass]="{'is-invalid': (formFormaPago.controls.precio.touched || enviado) && formFormaPago.controls.precio.errors}" /> 
       </div>
@@ -65,7 +64,7 @@
               <span class="text-danger fas fa-exclamation-circle" *ngIf="((formEFECTIVO.controls.monto.touched || enviado ) && formEFECTIVO.controls.monto.errors?.pattern) || (enviado && formEFECTIVO.invalid) "></span>
               <label class="col-form-label col-sm-2 col-sm-offset-1">
               Monto: </label>
-              <div class="col-sm-3">
+              <div class="col-sm-2">
                   <input type="text" name="Nombre" class="form-control" formControlName="monto" [ngClass]="{'is-invalid': (formEFECTIVO.controls.monto.touched || enviado) && formEFECTIVO.controls.monto.errors}" />
               </div>
           </div>
@@ -87,10 +86,10 @@
         <input type="radio" class="form-check-input" name="optradio" (click)="ActivarFechaHs()">Fecha y hora determinada
         <div class="input-group" *ngIf="desplegarFechaHs == 'SI'">
           <span class="text-danger" *ngIf="(formRECEPCION.controls.fecha.touched || enviado) && formRECEPCION.controls.fecha.errors?.required"></span>
-          <input type="text" name="Fecha" class="form-control col-lg-4" placeholder="dd/MM/AAAA" formControlName="fecha" [ngClass]="{'is-invalid': (formRECEPCION.controls.fecha.touched || enviado)  && formRECEPCION.controls.fecha.errors}"/>
+          <input type="text" name="Fecha" class="form-control col-lg-5" placeholder="dd/MM/AAAA" formControlName="fecha" [ngClass]="{'is-invalid': (formRECEPCION.controls.fecha.touched || enviado)  && formRECEPCION.controls.fecha.errors}"/>
           <label>&nbsp;</label>
           <span class="text-danger fas fa-exclamation-circle" *ngIf="((formRECEPCION.controls.hora.touched || enviado ) && formRECEPCION.controls.hora.errors?.pattern) || (enviado && formRECEPCION.invalid) "></span>
-          <input type="text" name="Fecha" class="form-control col-lg-2" placeholder="Hs" formControlName="hora" [ngClass]="{'is-invalid': (formRECEPCION.controls.hora.touched || enviado) && formRECEPCION.controls.hora.errors}"/>
+          <input type="time" class="form-control col-lg-4" placeholder="Hs" formControlName="hora" [ngClass]="{'is-invalid': (formRECEPCION.controls.hora.touched || enviado) && formRECEPCION.controls.hora.errors}"/>
         </div>
       </label>
   </div>
