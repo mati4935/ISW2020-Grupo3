@@ -13,9 +13,9 @@ export class PedidoComponent implements OnInit {
 
   Items: Ciudad[] = [];
 
-  desplegarProducto = "NO";
-  desplegarComercio = "NO";
-  desplegarEntrega = "NO";
+  desplegarProducto = "SI";
+  desplegarComercio = "SI";
+  desplegarEntrega = "SI";
   formPrimero:FormGroup;
   enviado:boolean = false;
   estado = "No confirmado"

@@ -9,6 +9,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { APP_BASE_HREF} from '@angular/common';
 import { CobroComponent } from './components/cobro/cobro.component';  
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ImagenComponent } from './imagen/imagen.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     PedidoComponent,
     MenuComponent,
-    CobroComponent
+    CobroComponent,
+    ImagenComponent
   ],
   imports: [
     BrowserModule,

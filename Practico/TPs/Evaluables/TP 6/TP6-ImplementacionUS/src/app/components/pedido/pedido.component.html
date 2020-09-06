@@ -20,8 +20,7 @@
           <div class="col-sm-3">
             <input type="text" name="Nombre" class="form-control" formControlName="productos" [ngClass]="{'is-invalid': (formPrimero.controls.productos.touched || enviado) && formPrimero.controls.productos.errors}" />
           </div>
-          <button title="Adjuntar imagen" type="button" class="btn btn-primary">
-            <span class="fa fa-camera"> </span></button>
+          <app-imagen></app-imagen>
         </div>
       </div>
 
