@@ -10,7 +10,7 @@ import { APP_BASE_HREF} from '@angular/common';
 import { CobroComponent } from './components/cobro/cobro.component';  
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ImagenComponent } from './imagen/imagen.component';
-
+import { GoogleMapsModule } from '@angular/google-maps';
 
 @NgModule({
   declarations: [
@@ -23,6 +23,7 @@ import { ImagenComponent } from './imagen/imagen.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    GoogleMapsModule,
     RouterModule.forRoot([
       { path: '', redirectTo: '/pedido', pathMatch: 'full' },
       { path: 'pedido', component: PedidoComponent },

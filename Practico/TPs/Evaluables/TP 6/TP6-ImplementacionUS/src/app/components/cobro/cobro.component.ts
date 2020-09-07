@@ -46,6 +46,10 @@ export class CobroComponent implements OnInit {
         null,
         [Validators.required, Validators.pattern('[4]{1}[0-9]{15}')],
       ],
+      fechaVencimiento:[
+        "",
+        [Validators.required,Validators.pattern("(0[1-9]|1[012])[-/](202|203)[0-9]{1}")]
+      ],
       codigoTarjeta: [
         null,
         [Validators.required, Validators.pattern('[0-9]{3}')],
