@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cobro',
@@ -133,6 +134,10 @@ export class CobroComponent implements OnInit {
         return;
       }
     }
-    alert('BIEN ECHO');
+    Swal.fire(
+      '¡Su pedido ya está en camino!',
+      'Pedido confirmado exitosamente',
+      'success'
+    )
   }
 }

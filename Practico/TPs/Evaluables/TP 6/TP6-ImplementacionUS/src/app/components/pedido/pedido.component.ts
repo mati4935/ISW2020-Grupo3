@@ -3,7 +3,6 @@ import { ciudades, Ciudad } from '../../models/ciudades';
 import { MockCiudadesService } from '../../services/mock-ciudades.service'
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 @Component({
   selector: 'app-pedido',
   templateUrl: './pedido.component.html',
@@ -19,6 +18,17 @@ export class PedidoComponent implements OnInit {
   formPrimero:FormGroup;
   enviado:boolean = false;
   estado = "No confirmado"
+
+  //-------MAPS-------
+  position = {
+    lat:-31.44233,
+    lng: -64.19324,
+  };
+  label = {
+    color: 'red',
+
+  };
+  //-----------------
 
   constructor(
     private servicioCiudades: MockCiudadesService,
@@ -79,5 +89,57 @@ export class PedidoComponent implements OnInit {
     }
     this.estado = "Confirmado";
   }
+  CerrarPopUp()
+  {
+    
+    let x = document.getElementById("overlay");
+    x.style.transition=".3s ease all"
+    if(x.style.visibility=="block"){
+      x.style.display = "none";
+      x.style.transition=".3s ease all"
+    }
+    else{
+      x.style.display="none"
+      x.style.transition=".3s ease all"
+    }
+  
+    
+  }
+  MostrarPopUp()
+  {
+    
+    // Se hace un click en el boton
+    let click = 1
+
+    // IDs de los elementos a mostrar...
+    let pop = document.getElementById("popup");
+    let x = document.getElementById("overlay");
+    let titulo1 = document.getElementById("titulo1");
+    let titulo2 = document.getElementById("titulo2");
+    let inputs = document.getElementById("inputs");
+    x.style.transition=".3s ease all"
+    if(x.style.display=="none" || click == 1 ){
+      x.style.top = "75px";
+      x.style.right= "0px";
+      x.style.left="450px";
+      x.style.bottom ="0px";
+      x.style.display = "block";
+      x.style.visibility = "visible";
+      x.style.transition=".3s ease all"
+    
+      pop.style.visibility = "visible";
+      pop.style.opacity = "1";
+      
+    }
+    else{
+      x.style.display="block";
+      x.style.transition=".3s ease all"
+      click = 0;
+      
+    }
+  }
+
+
+
 
 }

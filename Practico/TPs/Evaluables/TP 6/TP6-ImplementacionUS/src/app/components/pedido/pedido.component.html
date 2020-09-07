@@ -1,3 +1,5 @@
+<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600|Open+Sans" rel="stylesheet"> 
+
 <div class="container">
   <br />
   <h4 class="container-fluid">Tu pedido:</h4>
@@ -196,19 +198,19 @@
         </div>
 
         <div class="form-group row">
-          <button type="button" class="btn boton col-sm-2 offset-9">
+          <button type="button" class="btn boton col-sm-2 offset-9" (click)="MostrarPopUp()">
             <span class="fas fa-map-marked-alt"> </span>
             Busque por mapa
           </button>
         </div>
 
       </div>
-
+      <!--
       <div class="col-sm-6 offset-3">
         <google-map></google-map>
       </div>  
-
-      
+    -->
+    
 
       <br />
 
@@ -364,6 +366,27 @@
       </div>
 
       <br />
+    </form>
+  </div>
+</div>
+
+
+<div class="overlay" id="overlay">
+  <div class="popup" id="popup">
+    <a id="btn-cerrar-popup" class="btn-cerrar-popup" (click)="CerrarPopUp()"><i class="fas fa-times"></i></a>
+    <h4 id="titulo1">Búsqueda por Google Maps</h4>
+    <form action="">
+      <div class="col-sm-6">
+        <google-map width="535" height = "430" [center] = "position">
+          <map-marker
+            [position] = "position"
+            [label] = "label"
+            >
+          </map-marker>
+        </google-map>
+      </div>
+      <br />
+      <input type="submit" class="btn-submit" value="Aceptar" (click)="CerrarPopUp()">
     </form>
   </div>
 </div>
