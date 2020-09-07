@@ -376,7 +376,7 @@
     <h4 id="titulo1">Búsqueda por Google Maps</h4>
     <form action="">
       <div class="col-sm-6">
-        <google-map width="535" height = "430" [center] = "position" [zoom] = "zoom" [disableDefaultUI] = false (mapClick)="mapCliqueado($event)">
+        <google-map width="535" height = "430" [center] = "position" [zoom] = "zoom">
           <map-marker
             *ngFor = "let m of markers"
             [position] = "m.position"
