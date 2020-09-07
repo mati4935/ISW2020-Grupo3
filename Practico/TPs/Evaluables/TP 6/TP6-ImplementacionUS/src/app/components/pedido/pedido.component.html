@@ -370,18 +370,19 @@
   </div>
 </div>
 
-
 <div class="overlay" id="overlay">
   <div class="popup" id="popup">
     <a id="btn-cerrar-popup" class="btn-cerrar-popup" (click)="CerrarPopUp()"><i class="fas fa-times"></i></a>
     <h4 id="titulo1">Búsqueda por Google Maps</h4>
     <form action="">
       <div class="col-sm-6">
-        <google-map width="535" height = "430" [center] = "position">
+        <google-map width="535" height = "430" [center] = "position" [zoom] = "zoom" [disableDefaultUI] = false (mapClick)="mapCliqueado($event)">
           <map-marker
-            [position] = "position"
-            [label] = "label"
-            >
+            *ngFor = "let m of markers"
+            [position] = "m.position"
+            [label] = "m.label"
+            (click) = "ObtenerDatos()"
+            (markerClick)="markerCliqueado(m)">
           </map-marker>
         </google-map>
       </div>

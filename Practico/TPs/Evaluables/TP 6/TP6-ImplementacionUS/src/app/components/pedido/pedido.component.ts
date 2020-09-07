@@ -3,6 +3,7 @@ import { ciudades, Ciudad } from '../../models/ciudades';
 import { MockCiudadesService } from '../../services/mock-ciudades.service'
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MapMarker } from '@angular/google-maps';
 @Component({
   selector: 'app-pedido',
   templateUrl: './pedido.component.html',
@@ -11,7 +12,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 export class PedidoComponent implements OnInit {
 
   Items: Ciudad[] = [];
-
   desplegarProducto = "SI";
   desplegarComercio = "SI";
   desplegarEntrega = "SI";
@@ -20,15 +20,83 @@ export class PedidoComponent implements OnInit {
   estado = "No confirmado"
 
   //-------MAPS-------
-  position = {
-    lat:-31.44233,
-    lng: -64.19324,
+  // Establecemos la posición inicial
+  zoom: number = 15;
+  position={
+    lat:-31.4422991,
+    lng: -64.1926318
   };
-  label = {
-    color: 'red',
 
-  };
+  //Definimos el array con coordenadas a implementar e iterar...
+  markers: any[] = [
+    {
+      position:{
+        lat:-31.4258761,
+        lng: -64.1870013,
+      },
+      label:{
+        color: 'white',
+        text: 'Grabeat'
+      },
+    },
+
+    {
+      position:{
+        lat:-31.4240072,
+        lng: -64.1919525,
+      },
+      label:{
+        color: 'white',
+        text: 'Las Nietas de Nilda'
+      },
+    },
+
+    {
+      position:{
+        lat:-31.4232561,
+        lng: -64.1916435,
+      },
+      label:{
+        color: 'white',
+        text: 'The Journey'
+      },
+    },
+
+    {
+      position:{
+        lat:-31.4260778,
+        lng: -64.1824959,
+      },
+      label:{
+        color: 'white',
+        text: 'El hornito Santiagueño'
+      },
+    },
+
+    {
+      position:{
+        lat:-31.4272715,
+        lng: -64.1841864,
+      },
+      label:{
+        color: 'white',
+        text: 'Lomitos El Candil'
+      },
+    },
+
+    {
+      position:{
+        lat:-31.4505566,
+        lng: -64.1764336,
+      },
+      label:{
+        color: 'white',
+        text: 'Pan Plano B° Jardín'
+      },
+    },
+  ];
   //-----------------
+
 
   constructor(
     private servicioCiudades: MockCiudadesService,
@@ -138,8 +206,4 @@ export class PedidoComponent implements OnInit {
       
     }
   }
-
-
-
-
 }
