@@ -9,7 +9,6 @@ import { MenuComponent } from './components/menu/menu.component';
 import { APP_BASE_HREF} from '@angular/common';
 import { CobroComponent } from './components/cobro/cobro.component';  
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ImagenComponent } from './components/imagen/imagen.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 
 @NgModule({
@@ -18,7 +17,6 @@ import { GoogleMapsModule } from '@angular/google-maps';
     PedidoComponent,
     MenuComponent,
     CobroComponent,
-    ImagenComponent
   ],
   imports: [
     BrowserModule,
