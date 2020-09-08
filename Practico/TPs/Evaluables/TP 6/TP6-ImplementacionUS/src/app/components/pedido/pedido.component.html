@@ -198,7 +198,7 @@
         </div>
 
         <div class="form-group row">
-          <button type="button" class="btn boton col-sm-2 offset-9" (click)="MostrarPopUp()">
+          <button type="button" class="btn boton1 col-sm-2 offset-9" (click)="MostrarPopUp()">
             <span class="fas fa-map-marked-alt"> </span>
             Busque por mapa
           </button>
@@ -348,7 +348,7 @@
         <button
           type="button"
           routerLink="/cobro"
-          class="btn btn-dark"
+          class="btn boton2"
           *ngIf="estado == 'Confirmado'"
         >
           <span class="fas fa-arrow-right"> </span>
@@ -356,7 +356,7 @@
         </button>
         <button
           type="button"
-          class="btn btn-dark"
+          class="btn boton1"
           (click)="Confirmar()"
           *ngIf="estado == 'No confirmado'"
         >

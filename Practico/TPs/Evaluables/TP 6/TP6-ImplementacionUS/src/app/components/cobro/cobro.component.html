@@ -79,16 +79,6 @@
                 }" />
           </div>
           <i class="fa fa-cc-visa" style="font-size:36px"></i>
-          <i class="fa fa-cc-mastercard" style="font-size:36px"></i>
-          <div>
-            <img src="https://www.sammobile.com/wp-content/uploads/2013/02/1297909210_visa.jpg" width="65" height="25"
-              alt="imagen visa">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/MasterCard_early_1990s_logo.svg/1280px-MasterCard_early_1990s_logo.svg.png"
-              width="65" height="25" alt="imagen mastercard">
-            <img src="https://image.freepik.com/icones-gratis/x-simbolo_318-1407.jpg" width="30" height="25"
-              alt="tarjeta invalida">
-          </div>
 
         </div>
         <div class="form-group row">
@@ -167,7 +157,7 @@
                   (formRECEPCION.controls.fecha.touched || enviado) &&
                   formRECEPCION.controls.fecha.errors?.required
                 "></span>
-            <input type="date" name="Fecha" class="form-control col-md-12 " min="2020-09-08" placeholder="dd/MM/AAAA"
+            <input type="date" name="Fecha" class="form-control col-md-12 " min={{fechaActual}} placeholder="dd/MM/AAAA"
               formControlName="fecha" [ngClass]="{
                   'is-invalid':
                     (formRECEPCION.controls.fecha.touched || enviado) &&
@@ -192,12 +182,12 @@
     <br />
 
     <div>
-      <button type="button" routerLink="/pedido" class="btn btn-dark">
+      <button type="button" routerLink="/pedido" class="btn boton">
         <span class="fas fa-arrow-left"> </span>
         Volver
       </button>
 
-      <button type="button" class="btn btn-dark offset-9" (click)="Confirmar()">
+      <button type="button" class="btn boton offset-9" (click)="Confirmar()">
         <span class="fas fa-arrow-right"> </span>
         Confirmar
       </button>

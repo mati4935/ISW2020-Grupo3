@@ -1,7 +1,12 @@
-.boton {
-  color: white;
-  background-color: #565f81;
-}
+.boton1 {
+	color: white;
+	background-color: #565f81;
+  }
+  .boton2 {
+	  color: white;
+	  background-color: #A42B36;
+  }
+  
 
 /* ------------------------- */
 /* POPUP */

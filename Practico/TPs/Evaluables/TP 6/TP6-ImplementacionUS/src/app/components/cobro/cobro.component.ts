@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
+import { DatePipe } from '@angular/common';
+import {formatDate} from '@angular/common';
 
 @Component({
   selector: 'app-cobro',
   templateUrl: './cobro.component.html',
   styleUrls: ['./cobro.component.css'],
+  providers: [DatePipe]
 })
 export class CobroComponent implements OnInit {
   desplegarEfectivo = 'NO';
@@ -18,8 +21,11 @@ export class CobroComponent implements OnInit {
   formEFECTIVO: FormGroup;
   formRECEPCION: FormGroup;
   enviado: boolean = false;
+  fechaActual: string;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private datePipe: DatePipe, private formBuilder: FormBuilder) {
+    this.fechaActual = formatDate(new Date(), 'yyyy-MM-dd', 'en');
+  }
 
   ngOnInit(): void {
     this.formFormaPago = this.formBuilder.group({
@@ -28,14 +34,6 @@ export class CobroComponent implements OnInit {
 
     this.formVISA = this.formBuilder.group({
       nombreTitular: [
-        '',
-        [
-          Validators.required,
-          Validators.minLength(1),
-          Validators.maxLength(55),
-        ],
-      ],
-      apellidoTitular: [
         '',
         [
           Validators.required,
@@ -107,7 +105,12 @@ export class CobroComponent implements OnInit {
       return;
     }
     if (this.formaPago == 'E' && this.recepcion == 'AP') {
-      if (this.formFormaPago.invalid || this.formEFECTIVO.invalid) {
+      if (this.formFormaPago.invalid || this.formEFECTIVO.invalid || (this.formFormaPago.controls.precio.value > this.formEFECTIVO.controls.monto.value)) {
+        
+        if (this.formFormaPago.controls.precio.value > this.formEFECTIVO.controls.monto.value)
+        {
+          alert("El monto tiene que ser mayor al total")
+        }
         return;
       }
     }
@@ -120,8 +123,13 @@ export class CobroComponent implements OnInit {
       if (
         this.formFormaPago.invalid ||
         this.formEFECTIVO.invalid ||
-        this.formRECEPCION.invalid
-      ) {
+        this.formRECEPCION.invalid ||
+        (this.formFormaPago.controls.precio.value > this.formEFECTIVO.controls.monto.value)
+        ) {
+          if (this.formFormaPago.controls.precio.value > this.formEFECTIVO.controls.monto.value)
+          {
+            alert("El monto tiene que ser mayor al total")
+          }
         return;
       }
     }
@@ -134,6 +142,7 @@ export class CobroComponent implements OnInit {
         return;
       }
     }
+    
     Swal.fire(
       '¡Su pedido ya está en camino!',
       'Pedido confirmado exitosamente',

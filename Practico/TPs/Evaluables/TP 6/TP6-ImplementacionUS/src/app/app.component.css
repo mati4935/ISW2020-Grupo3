@@ -2,14 +2,10 @@
   min-height: 75rem;
   padding-top: 4.5rem;
 }
-.miestilo1 {
-  background-color: #565f81;
-}
-.miestilo2 {
-  background-color: #d4a460;
-  color: black;
-}
 body {
   width: 100%;
-  background-color: #a42b36;
+  background-color: #FFE5E5;
+}
+.estiloForm {
+  background-color: #ffffff;
 }
