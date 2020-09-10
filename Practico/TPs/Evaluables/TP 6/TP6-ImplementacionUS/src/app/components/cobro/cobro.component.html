@@ -1,4 +1,7 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
 
 <div class="container">
   <br />
@@ -10,128 +13,189 @@
         <label class="col-form-label col-sm-5 col-sm-offset-1">
           Seleccione la forma de pago
         </label>
-        <label class="col-form-label col-sm-2 offset-2"><span class="text-danger fas fa-exclamation-circle" *ngIf="
-                ((formFormaPago.controls.precio.touched || enviado) &&
-                  formFormaPago.controls.precio.errors?.pattern) ||
-                (enviado && formFormaPago.invalid)
-              "></span>
+        <label class="col-form-label col-sm-2 offset-2"
+          ><span
+            class="text-danger fas fa-exclamation-circle"
+            *ngIf="
+              ((formFormaPago.controls.precio.touched || enviado) &&
+                formFormaPago.controls.precio.errors?.pattern) ||
+              (enviado && formFormaPago.invalid)
+            "
+          ></span>
           Total:
         </label>
-        <input type="number" name="Nombre" class="form-control col-sm-3" formControlName="precio" [ngClass]="{
-              'is-invalid':
-                (formFormaPago.controls.precio.touched || enviado) &&
-                formFormaPago.controls.precio.errors
-            }" />
+        <input
+          type="number"
+          name="Nombre"
+          class="form-control col-sm-3"
+          formControlName="precio"
+          [ngClass]="{
+            'is-invalid':
+              (formFormaPago.controls.precio.touched || enviado) &&
+              formFormaPago.controls.precio.errors
+          }"
+        />
       </div>
 
       <div class="form-check-inline">
         <label class="form-check-label">
-          <input type="radio" class="form-check-input" name="optradio" (click)="ActivarEfectivo()" />Efectivo
+          <input
+            type="radio"
+            class="form-check-input"
+            name="optradio"
+            (click)="ActivarEfectivo()"
+          />Efectivo
         </label>
       </div>
       <div class="form-check-inline offset-4">
         <label class="form-check-label">
-          <input type="radio" class="form-check-input" name="optradio" (click)="ActivarVISA()" />Tarjeta de Credito
+          <input
+            type="radio"
+            class="form-check-input"
+            name="optradio"
+            (click)="ActivarVISA()"
+          />Tarjeta de Credito
         </label>
         &nbsp;
-        <i class="fa fa-credit-card" style="font-size:36px"></i>
+        <i class="fa fa-credit-card" style="font-size: 36px"></i>
       </div>
-
     </form>
     <br />
     <br />
     <form name="formVISA" [formGroup]="formVISA">
       <div *ngIf="desplegarVISA == 'SI'">
         <div class="form-group row">
-          <span class="text-danger fas fa-exclamation-circle" *ngIf="
-                ((formVISA.controls.nombreTitular.touched || enviado) &&
-                  (formVISA.controls.nombreTitular.errors?.minlength ||
-                    formVISA.controls.nombreTitular.errors?.maxlength)) ||
-                (enviado && formVISA.invalid)
-              "></span>
+          <span
+            class="text-danger fas fa-exclamation-circle"
+            *ngIf="
+              ((formVISA.controls.nombreTitular.touched || enviado) &&
+                (formVISA.controls.nombreTitular.errors?.minlength ||
+                  formVISA.controls.nombreTitular.errors?.maxlength)) ||
+              (enviado && formVISA.invalid)
+            "
+          ></span>
           <label class="col-form-label col-sm-3 col-sm-offset-1">
             Nombre y Apellido Titular:
           </label>
           <div class="col-sm-7">
-            <input type="text" name="Nombre" class="form-control" formControlName="nombreTitular" [ngClass]="{
-                  'is-invalid':
-                    (formVISA.controls.nombreTitular.touched || enviado) &&
-                    formVISA.controls.nombreTitular.errors
-                }" />
+            <input
+              type="text"
+              name="Nombre"
+              class="form-control"
+              formControlName="nombreTitular"
+              [ngClass]="{
+                'is-invalid':
+                  (formVISA.controls.nombreTitular.touched || enviado) &&
+                  formVISA.controls.nombreTitular.errors
+              }"
+            />
           </div>
-
         </div>
 
         <div class="form-group row">
-          <span class="text-danger fas fa-exclamation-circle" *ngIf="
-                ((formVISA.controls.numeroTarjeta.touched || enviado) &&
-                  formVISA.controls.numeroTarjeta.errors?.pattern) ||
-                (enviado && formVISA.invalid)
-              "></span>
+          <span
+            class="text-danger fas fa-exclamation-circle"
+            *ngIf="
+              ((formVISA.controls.numeroTarjeta.touched || enviado) &&
+                formVISA.controls.numeroTarjeta.errors?.pattern) ||
+              (enviado && formVISA.invalid)
+            "
+          ></span>
           <label class="col-form-label col-sm-2 col-sm-offset-1">
             Número de tarjeta:
           </label>
           <div class="col-sm-3">
-            <input type="number" name="Nombre" class="form-control" formControlName="numeroTarjeta" [ngClass]="{
-                  'is-invalid':
-                    (formVISA.controls.numeroTarjeta.touched || enviado) &&
-                    formVISA.controls.numeroTarjeta.errors
-                }" />
+            <input
+              type="number"
+              name="Nombre"
+              class="form-control"
+              formControlName="numeroTarjeta"
+              [ngClass]="{
+                'is-invalid':
+                  (formVISA.controls.numeroTarjeta.touched || enviado) &&
+                  formVISA.controls.numeroTarjeta.errors
+              }"
+            />
           </div>
-          <i class="fa fa-cc-visa" style="font-size:36px"></i>
-
+          <i class="fa fa-cc-visa" style="font-size: 36px"></i>
         </div>
         <div class="form-group row">
-          <span class="text-danger fas fa-exclamation-circle" *ngIf="
-                ((formVISA.controls.codigoTarjeta.touched || enviado) &&
-                  formVISA.controls.codigoTarjeta.errors?.pattern) ||
-                (enviado && formVISA.invalid)
-              "></span>
-          <label class="col-form-label col-sm-2 col-sm-offset-1"> CVC: </label>
-          <div class="col-sm-2">
-            <input type="text" name="Nombre" class="form-control" formControlName="codigoTarjeta" [ngClass]="{
-                  'is-invalid':
-                    (formVISA.controls.codigoTarjeta.touched || enviado) &&
-                    formVISA.controls.codigoTarjeta.errors
-                }" />
-          </div>            
-          <label class="col-form-label col-sm-4 col-sm-offset-1" ><span
+          <span
             class="text-danger fas fa-exclamation-circle"
             *ngIf="
-              ((formVISA.controls.fechaVencimiento.touched || enviado) &&
-                formVISA.controls.fechaVencimiento.errors?.pattern) ||
+              ((formVISA.controls.codigoTarjeta.touched || enviado) &&
+                formVISA.controls.codigoTarjeta.errors?.pattern) ||
               (enviado && formVISA.invalid)
             "
-          ></span>Fecha de Vencimiento</label>
+          ></span>
+          <label class="col-form-label col-sm-2 col-sm-offset-1"> CVC: </label>
           <div class="col-sm-2">
-            <input type="text" name="Nombre" class="form-control" placeholder="MM/AAAA" formControlName="fechaVencimiento" [ngClass]="{
-              'is-invalid':
-                (formVISA.controls.fechaVencimiento.touched || enviado) &&
-                formVISA.controls.fechaVencimiento.errors}" />
+            <input
+              type="number"
+              name="Nombre"
+              class="form-control"
+              formControlName="codigoTarjeta"
+              [ngClass]="{
+                'is-invalid':
+                  (formVISA.controls.codigoTarjeta.touched || enviado) &&
+                  formVISA.controls.codigoTarjeta.errors
+              }"
+            />
+          </div>
+          <label class="col-form-label col-sm-4 col-sm-offset-1"
+            ><span
+              class="text-danger fas fa-exclamation-circle"
+              *ngIf="
+                ((formVISA.controls.fechaVencimiento.touched || enviado) &&
+                  formVISA.controls.fechaVencimiento.errors?.pattern) ||
+                (enviado && formVISA.invalid)
+              "
+            ></span
+            >Fecha de Vencimiento</label
+          >
+          <div class="col-sm-2">
+            <input
+              type="text"
+              name="Nombre"
+              class="form-control"
+              placeholder="MM/AAAA"
+              formControlName="fechaVencimiento"
+              [ngClass]="{
+                'is-invalid':
+                  (formVISA.controls.fechaVencimiento.touched || enviado) &&
+                  formVISA.controls.fechaVencimiento.errors
+              }"
+            />
           </div>
         </div>
-
-
-
       </div>
     </form>
     <form name="formEFECTIVO" [formGroup]="formEFECTIVO">
       <div *ngIf="desplegarEfectivo == 'SI'">
         <div class="form-group row">
-          <span class="text-danger fas fa-exclamation-circle" *ngIf="
-                ((formEFECTIVO.controls.monto.touched || enviado) &&
-                  formEFECTIVO.controls.monto.errors?.pattern) ||
-                (enviado && formEFECTIVO.invalid)
-              "></span>
+          <span
+            class="text-danger fas fa-exclamation-circle"
+            *ngIf="
+              ((formEFECTIVO.controls.monto.touched || enviado) &&
+                formEFECTIVO.controls.monto.errors?.pattern) ||
+              (enviado && formEFECTIVO.invalid)
+            "
+          ></span>
           <label class="col-form-label col-sm-2 col-sm-offset-1">
             Monto:
           </label>
           <div class="col-sm-2">
-            <input type="number" name="Nombre" class="form-control" formControlName="monto" [ngClass]="{
-                  'is-invalid':
-                    (formEFECTIVO.controls.monto.touched || enviado) &&
-                    formEFECTIVO.controls.monto.errors
-                }" />
+            <input
+              type="number"
+              name="Nombre"
+              class="form-control"
+              formControlName="monto"
+              [ngClass]="{
+                'is-invalid':
+                  (formEFECTIVO.controls.monto.touched || enviado) &&
+                  formEFECTIVO.controls.monto.errors
+              }"
+            />
           </div>
         </div>
       </div>
@@ -145,35 +209,63 @@
 
       <div class="form-check offset-4">
         <label class="form-check-label">
-          <input type="radio" class="form-check-input" name="optradio" (click)="DesactivarFechaHs()" />Lo antes posible
+          <input
+            type="radio"
+            class="form-check-input"
+            name="optradio"
+            (click)="DesactivarFechaHs()"
+          />Lo antes posible
         </label>
       </div>
       <div class="form-check offset-4">
         <label class="form-check-label">
-          <input type="radio" class="form-check-input" name="optradio" (click)="ActivarFechaHs()" />Fecha y hora
-          determinada
+          <input
+            type="radio"
+            class="form-check-input"
+            name="optradio"
+            (click)="ActivarFechaHs()"
+          />Fecha y hora determinada
           <div class="input-group" *ngIf="desplegarFechaHs == 'SI'">
-            <span class="text-danger" *ngIf="
+            <span
+              class="text-danger"
+              *ngIf="
+                (formRECEPCION.controls.fecha.touched || enviado) &&
+                formRECEPCION.controls.fecha.errors?.required
+              "
+            ></span>
+            <input
+              type="date"
+              name="Fecha"
+              class="form-control col-md-9"
+              min="{{ fechaActual }}"
+              placeholder="dd/MM/AAAA"
+              formControlName="fecha"
+              [ngClass]="{
+                'is-invalid':
                   (formRECEPCION.controls.fecha.touched || enviado) &&
-                  formRECEPCION.controls.fecha.errors?.required
-                "></span>
-            <input type="date" name="Fecha" class="form-control col-md-12 " min={{fechaActual}} placeholder="dd/MM/AAAA"
-              formControlName="fecha" [ngClass]="{
-                  'is-invalid':
-                    (formRECEPCION.controls.fecha.touched || enviado) &&
-                    formRECEPCION.controls.fecha.errors
-                }" />
+                  formRECEPCION.controls.fecha.errors
+              }"
+            />
             <label>&nbsp;</label>
-            <span class="text-danger fas fa-exclamation-circle" *ngIf="
-                  ((formRECEPCION.controls.hora.touched || enviado) &&
-                    formRECEPCION.controls.hora.errors?.pattern) ||
-                  (enviado && formRECEPCION.invalid)
-                "></span>
-            <input type="time" class="form-control col-md-6" placeholder="Hs" formControlName="hora" [ngClass]="{
-                  'is-invalid':
-                    (formRECEPCION.controls.hora.touched || enviado) &&
-                    formRECEPCION.controls.hora.errors
-                }" />
+            <span
+              class="text-danger fas fa-exclamation-circle"
+              *ngIf="
+                ((formRECEPCION.controls.hora.touched || enviado) &&
+                  formRECEPCION.controls.hora.errors?.pattern) ||
+                (enviado && formRECEPCION.invalid)
+              "
+            ></span>
+            <input
+              type="time"
+              class="form-control col-md-4"
+              placeholder="Hs"
+              formControlName="hora"
+              [ngClass]="{
+                'is-invalid':
+                  (formRECEPCION.controls.hora.touched || enviado) &&
+                  formRECEPCION.controls.hora.errors
+              }"
+            />
           </div>
         </label>
       </div>
