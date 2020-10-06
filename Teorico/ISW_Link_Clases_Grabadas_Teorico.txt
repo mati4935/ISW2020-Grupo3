@@ -42,11 +42,13 @@ Clase del Jueves 27 de Agosto
 
 4K1_20200827_Scrum_Parte3 - https://youtu.be/qhpFAU98GZw
 
+
 Clase del Jueves 3 de Septiembre
 
 4K1_20200903_FrameEscalarScrum_Parte1 – https://youtu.be/XmacVkiiMOk 
 
 4K1_20200903_FrameEscalarScrum_Parte2 – https://youtu.be/19W2GbS4wz8
+
 
 Clase del Jueves 17 de Septiembre
 
@@ -54,8 +56,14 @@ Clase del Jueves 17 de Septiembre
 
 4K1_20200917_TestingSoftware_Parte2 -  https://youtu.be/1MiSeaQz4eQ
 
+
 Clase del Jueves 24 de Septiembre
 
 4K1_20200924_TestingSoftware_Parte1 - https://youtu.be/rcjx__NhwJM 
 
 4K1_20200924_TestingSoftware_Parte2 - https://youtu.be/7EiAdCFb-FI
+
+
+Clase del Jueves 01 de Octubre – Aseguramiento de Calidad de Proceso y de Producto
+
+4K1_20201001_PPQA - https://youtu.be/GC0HejFmA5w
