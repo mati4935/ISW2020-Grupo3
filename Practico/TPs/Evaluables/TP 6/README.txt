@@ -1,1 +1,0 @@
-TP 6 - Requerimientos ágiles - Implementacion de User Stories 
